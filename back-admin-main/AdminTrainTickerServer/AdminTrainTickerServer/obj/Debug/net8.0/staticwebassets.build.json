@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "/Z8IfSOYVdJ1ZQlLdUz8W2N+To4rcMGBoB2TDAJ25Bs=",
+  "Source": "AdminTrainTickerServer",
+  "BasePath": "_content/AdminTrainTickerServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
