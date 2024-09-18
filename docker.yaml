@@ -1,0 +1,27 @@
+---
+- name: Configure WebServers with Docker
+  hosts: Azure
+  gather_facts: false
+  become: True
+  vars:
+    build: 4
+
+  tasks:
+#    - name: Update apt and install docker
+#      apt:
+#        name: docker
+#        state: latest
+#        update_cache: true
+        
+    - name: Delete running containers
+      shell: docker rm -f $(docker ps --all --quiet)
+      
+    - name: Delete all Docker Images
+      shell: docker rmi -f $(docker images --all --quiet)    
+      
+
+    - name: Pull Docker image
+      command: docker pull nickabr/v1:{{ build }}
+
+    - name: Run Docker image
+      command: docker run -d -p 8000:8080 nickabr/v2:{{ build }}
